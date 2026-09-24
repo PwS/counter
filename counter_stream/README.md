@@ -1,16 +1,15 @@
-# counter
+# counter_stream: Cubit + connectivity + routing
 
-A new Flutter project.
+A counter that listens to the network connection: Wi-Fi increments it, and mobile data or
+disconnecting decrements it. It shows one Cubit subscribing to another, and one Cubit shared
+across three named routes.
 
-## Getting Started
+```bash
+flutter pub get
+flutter run
+```
 
-This project is a starting point for a Flutter application.
+Toggle Wi-Fi, mobile data or airplane mode to see it react. The package name is `counter`
+(`package:counter/...`).
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+See the [main README](../README.md#2-counter_stream-cubit--connectivity--routing) for the full walkthrough.

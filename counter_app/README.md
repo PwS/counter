@@ -1,16 +1,13 @@
-# counter_app
+# counter_app: BLoC & Cubit
 
-A new Flutter project.
+The Flutter counter written twice with `flutter_bloc`: once as a **Bloc** (events) and once as a
+**Cubit** (methods). Reaching **3** shows a dialog, and reaching **−1** opens another page.
 
-## Getting Started
+```bash
+flutter pub get
+flutter run
+```
 
-This project is a starting point for a Flutter application.
+`lib/main.dart` runs the BLoC version. Use `runApp(const MyAppCubit())` for the Cubit version.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+See the [main README](../README.md#1-counter_app-bloc--cubit) for the full walkthrough.
