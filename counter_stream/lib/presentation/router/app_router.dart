@@ -23,7 +23,7 @@ class AppRouter {
       case '/third':
         return MaterialPageRoute(
           builder: (_) => const ThirdScreen(
-            title: "Thirst Screen",
+            title: "Third Screen",
             color: Colors.greenAccent,
           ),
         );

@@ -30,7 +30,8 @@ migrate_working_dir/
 .packages
 .pub-cache/
 .pub/
-/build/
+# Build output of every sub-project (e.g. counter_stream/build/)
+build/
 
 # Symbolication related
 app.*.symbols

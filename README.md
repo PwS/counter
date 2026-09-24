@@ -174,7 +174,7 @@ every route reads the same instances. Each Cubit cancels its subscription in `cl
 | Cubit | State | Meaning |
 | --- | --- | --- |
 | `InternetCubit` | `InternetLoading` | No connection event received yet (a spinner is shown) |
-| | `InternetConnected(connectionType)` | Connected over `ConnectionType.Wifi` or `ConnectionType.Mobile` |
+| | `InternetConnected(connectionType)` | Connected over `ConnectionType.Wifi` or `ConnectionType.Mobile`. `connectionType` is in `props`, so switching directly between Wi-Fi and mobile is detected as a change |
 | | `InternetDisconnected` | No connection |
 | `CounterCubit` | `CounterState(counterValue, wasIncremented)` | Current value, and whether the last change was up or down |
 
@@ -254,14 +254,6 @@ mock in tests.
 
 ## Known issues
 
-- **`counter_stream`: switching between Wi-Fi and mobile data is not detected.**
-  `InternetConnected.props` returns an empty list, so `InternetConnected(Wifi)` and
-  `InternetConnected(Mobile)` count as equal, and the Cubit doesn't emit the change. The fix
-  is `List<Object> get props => [connectionType];` in `internet_state.dart`.
-- **`counter_stream`: the third screen's title has a typo.** It reads "Thirst Screen" (in
-  `app_router.dart`).
-- **`counter_stream`: build output is committed.** `counter_stream/build/` (about 400 MB)
-  is in the repository and should be deleted and git-ignored.
 - **`counter_reactive`: the subject is never closed.** `CounterRx.dispose()` exists but
   isn't called, because `MyHomePage` is a `StatelessWidget`. That's fine for a single-screen
   demo, but in a real app create it in a `StatefulWidget` and dispose it in `dispose()`.
